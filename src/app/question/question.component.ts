@@ -14,7 +14,7 @@ export class QuestionComponent implements OnInit {
   public nextQuestion; //Will be used to store next question id,upcoming question
   public showNextBtn:boolean=false;//Will be used show next button 
   public question : QuestionsJson;//Use to store question object
-  public selopt : boolean = true;
+  public selopt;
 
   constructor(private roter : ActivatedRoute,private que : QuestionServiceService, private fb :FormBuilder) { }
 

@@ -21,7 +21,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
     this.questionNo =this.roter.snapshot.paramMap.get("no");
     if(this.questionNo > 10){
-        window.location.href = "/error";
+        window.location.href = "error";
     }else{
       //getting question
       this.question = this.que.getPopulatedQuestionForId(parseInt(this.questionNo));
@@ -46,7 +46,7 @@ export class QuestionComponent implements OnInit {
       console.log(selopt)//selected option
       this.question.setSelectedOption(selopt);//setting selected option
       localStorage.setItem(this.question.getQuestionNo()+"", JSON.stringify(this.question));
-      window.location.href = "/q/"+this.nextQuestion;
+      window.location.href = "q/"+this.nextQuestion;
     }else{
       alert("Please select a valid option..!");
     } 
@@ -61,7 +61,7 @@ export class QuestionComponent implements OnInit {
       console.log(selopt)//selected option
       this.question.setSelectedOption(selopt);//setting selected option
       localStorage.setItem(this.question.getQuestionNo()+"", JSON.stringify(this.question));
-      window.location.href = "/result";
+      window.location.href = "result";
     }else{
         alert("Please select a valid option..!");
     } 

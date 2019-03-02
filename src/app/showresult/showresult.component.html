@@ -1,0 +1,36 @@
+<!--Result page <br>
+  Where user will be seen all the questioned answer <br>
+  Also user will be seen correct answer and selected answer <br>
+-->
+<div class="container-fluid">
+    <div class="row align-items-center _fullheight">
+        <div class="offset-md-3 col-md-6 col-12">
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-12 mb-2">
+                        <h3><b>Result</b></h3>
+                    </div>
+                    <div class="col-6 border-bottom mb-2">
+                       <h5>Total Point : 10 </h5>
+                    </div>
+                    <div class="col-6 border-bottom mb-2 text-right">
+                        <h5>Correct Answers : {{_correctAnswer}} </h5>
+                     </div>
+                    <div *ngFor="let que of allAnsweredQues" class="col-12 mb-3 border-bottom">
+                        <div class="mb-1"> <b>Question {{que._questionNo}} : </b> {{que._question}}</div>
+                        <div class="mb-1">1. {{que._options._option1}}</div>
+                        <div class="mb-1">2. {{que._options._option2}}</div>
+                        <div class="mb-1">3. {{que._options._option3}}</div>
+                        <div class="mb-1">4. {{que._options._option4}}</div>
+                        <div class="mb-1">Selected answer : {{que._selectedOption}} </div>
+                        <div class="mb-1">Correct answer : {{que._correctOption}} </div>
+                    </div>
+                    <div class="col-12 text-right mb-2">
+                       <a routerLink="/instruction" class="btn btn-warning text-uppercase text-white">
+                          Start again
+                       </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

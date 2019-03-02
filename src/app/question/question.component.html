@@ -1,0 +1,53 @@
+<!--A question Temaplate will be used to display question<br>
+    Question and questions options
+-->
+<div class="container-fluid">
+    <div class="row align-items-center _fullheight">
+        <div class="offset-md-3 col-md-6 col-12">
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-12 border-bottom mb-2">
+                        <h5><b>Question {{question._questionNo }} : </b> {{question._question}}</h5>
+                    </div>
+                    <form #questionForm="ngForm">
+                      <div class="col-12 mb-2">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="opt1" name="optns" [value]="1" [(ngModel)] = "selopt">
+                            <label class="custom-control-label" for="opt1">{{question._options._option1}}</label>
+                          </div> 
+                      </div>
+                      <div class="col-12 mb-2">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="opt2" name="optns" [value]="2" [(ngModel)] = "selopt">
+                            <label class="custom-control-label" for="opt2">{{question._options._option2}}</label>
+                          </div> 
+                      </div>
+                      <div class="col-12 mb-2">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="opt3" name="optns" [value]="3" [(ngModel)] = "selopt">
+                            <label class="custom-control-label" for="opt3">{{question._options._option3}}</label>
+                          </div> 
+                      </div>
+                      <div class="col-12 mb-2">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="opt4" name="optns" [value]="4" [(ngModel)] = "selopt">
+                            <label class="custom-control-label" for="opt4">{{question._options._option4}}</label>
+                          </div> 
+                      </div>
+                    </form>
+                    <div class="col-12 text-right mb-2">
+                      <div *ngIf="showNextBtn else showResultTemp"> 
+                          <button (click)="showNextQuestion(selopt)" class="btn btn-danger text-uppercase text-white">
+                            Next
+                          </button>
+                      </div>
+                    </div>
+                    <ng-template #showResultTemp>
+                        <button class="btn btn-success" (click)="showResult(selopt)">
+                            Show Result
+                        </button>
+                      </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>  

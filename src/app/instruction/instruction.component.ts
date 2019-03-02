@@ -1,0 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-instruction',
+  templateUrl: './instruction.component.html',
+  styleUrls: ['./instruction.component.css']
+})
+export class InstructionComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+    //clear local storage as soon as user start test
+    localStorage.clear();
+  }
+
+}
